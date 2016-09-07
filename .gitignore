@@ -1,0 +1,49 @@
+/*
+Developer - Shyanaka Rama
+Demostration of Linear Search
+*/
+
+#include <iostream> 
+using namespace std;
+
+int searchList(const int[], int, int);
+
+const int SIZE = 4;
+
+int main()
+{
+    int tests[SIZE] = {17, 30, 5, 8};
+    int result;
+    
+    result = searchList(tests, SIZE, 30);
+    
+    if(result == -1)
+    {
+        cout <<"The element has not found in the array"<<endl;
+    }
+    else
+    {
+        cout<<"Your searching target was 30"<<endl;
+        cout<<"It is in "<<(result+1)<<endl;
+    }
+    return 0;
+}
+
+int searchList(const int list[], int elements, int value)
+{
+    bool found = false;
+    int position = -1;
+    int index = 0;
+    
+    while(!found && index < elements)
+    {
+        if(list[index] == value)
+        {
+            found = true;
+            position = index;
+        }
+        index++;
+    }
+    
+    return position ;
+}
